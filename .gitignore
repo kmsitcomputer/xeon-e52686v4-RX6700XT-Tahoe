@@ -1,0 +1,14 @@
+# macOS metadata
+.DS_Store
+.Spotlight-V100
+.Trashes
+.fseventsd
+__MACOSX
+
+# Windows metadata
+Thumbs.db
+desktop.ini
+
+# OpenCore debug logs (generated at runtime)
+opencore-*.txt
+nvram.plist
