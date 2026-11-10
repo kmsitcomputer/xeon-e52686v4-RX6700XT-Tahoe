@@ -3,8 +3,16 @@
 OpenCore EFI for a **X99 / Xeon E5-2686 v4 + AMD Radeon RX 6700 XT** Hackintosh running **macOS Tahoe (26)**.
 
 > **⚠️ IMPORTANT — Serials are sanitized!**
-> `SystemSerialNumber`, `MLB`, `SystemUUID` and `ROM` in `EFI/OC/config.plist` are placeholders (`XXXX…`).
+> `SystemSerialNumber`, `MLB`, `SystemUUID` and `ROM` in `EFI/OC/config.plist` are placeholders (`XXXX…` / `AA AA AA`).
 > You **MUST** generate your own values before using this EFI. See [Before you boot](#before-you-boot).
+
+---
+
+## Update log
+
+| Date | Change |
+| --- | --- |
+| 2026-11-10 | Switched Wi-Fi/BT to **Intel AX210**: added `AirportItlwm` (Tahoe build), `IntelBluetoothFirmware` + `IntelBTPatcher` (lshbluesky fork), removed Realtek Bluetooth firmware. Updated `config.plist` (added `-btlfxallowanyaddr` boot-arg) and refreshed `UTBMap.kext` USB port map. |
 
 ---
 
@@ -17,7 +25,8 @@ OpenCore EFI for a **X99 / Xeon E5-2686 v4 + AMD Radeon RX 6700 XT** Hackintosh 
 | GPU | AMD Radeon RX 6700 XT (Navi 22, RDNA 2) |
 | Audio | Realtek onboard (ALC) |
 | Ethernet | Realtek RTL8111 |
-| Bluetooth | Realtek USB/PCIe dongle |
+| Wi-Fi | Intel AX210 (Tahoe build of AirportItlwm) |
+| Bluetooth | Intel AX210 (IntelBluetoothFirmware + IntelBTPatcher) |
 | SMBIOS | `MacPro7,1` (vendor spoofed) |
 
 ## Software
@@ -26,7 +35,7 @@ OpenCore EFI for a **X99 / Xeon E5-2686 v4 + AMD Radeon RX 6700 XT** Hackintosh 
 | --- | --- |
 | OpenCore | `DBG-109-2026-10-31` (debug build) |
 | macOS | Tahoe (26) — `boot.efi 583~6005` |
-| boot-args | `debug=0x100 keepsyms=1 npci=0x2000` |
+| boot-args | `debug=0x100 keepsyms=1 npci=0x2000 -btlfxallowanyaddr` |
 | SIP | Enabled (`csr-active-config = 0`) |
 | Secure Boot | `SecureBootModel: Disabled` |
 | NVRAM | Emulated (`OpenVariableRuntimeDxe` — X99 legacy NVRAM) |
@@ -54,17 +63,19 @@ OpenCore EFI for a **X99 / Xeon E5-2686 v4 + AMD Radeon RX 6700 XT** Hackintosh 
 | VirtualSMC | 1.3.9 | Fake SMC |
 | SMCProcessor | 1.3.9 | CPU sensors |
 | SMCSuperIO | 1.3.9 | Fan sensors |
-| NootRX | 1.0.0 | RX 6700 XT (RDNA 2) graphics |
+| NootRX | 1.0.0 | RX 6700 XT (RDNA 2) graphics (min kernel 20.5.0) |
 | AppleALC | 1.9.9 | Audio |
 | SimpleHDA | 1.0.1 | Audio (Realtek fallback) |
 | CpuTscSync | 1.1.3 | TSC sync on X99 |
 | NVMeFix | 1.1.4 | NVMe power management |
-| RealtekRTL8111 | 3.0.0 | Ethernet |
-| RealtekBluetoothFirmware | 1.0.2 | Bluetooth firmware |
+| RealtekRTL8111 | 3.0.22 | Ethernet |
+| AirportItlwm | 2.4.0 (Tahoe) | Wi-Fi Intel AX210 (laobamac build, min kernel 25.0.0) |
+| IntelBluetoothFirmware | 2.5.3 (lshbluesky fork) | Bluetooth AX210 firmware |
+| IntelBTPatcher | 2.5.3 (lshbluesky fork) | Bluetooth AX210 patcher |
 | BlueToolFixup | 2.7.3 | Bluetooth on Monterey+ |
 | RestrictEvents | 1.1.7 | Patch RAM warnings / events |
-| USBToolBox | — | USB mapping |
-| UTBMap | 1.1 | USB port map |
+| USBToolBox | 1.2.0 | USB mapping tool |
+| UTBMap | 2.0 | USB port map (XHCI 12 ports + EHC1 + EHC2) |
 | XHCI-unsupported | 0.9.2 | Unsupported USB controllers |
 
 ---
@@ -106,5 +117,7 @@ Then reset NVRAM (`ResetNvramEntry` is available in the boot picker, or press `C
 - [Acidanthera](https://github.com/Acidanthera) — OpenCore, Lilu, VirtualSMC, AppleALC, NootRX, RestrictEvents, CpuTscSync, NVMeFix
 - [Mieze](https://github.com/Mieze) — RealtekRTL8111
 - [USBToolBox](https://github.com/USBToolBox) — USB mapping
+- [laobamac](https://github.com/laobamac) — AirportItlwm macOS Tahoe build (Intel Wi-Fi)
+- [lshbluesky](https://github.com/lshbluesky) — IntelBluetoothFirmware/IntelBTPatcher Tahoe fork
 - [corpnewt](https://github.com/corpnewt) — GenSMBIOS
 - [Dortania](https://dortania.github.io) — OpenCore Install Guide
