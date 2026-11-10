@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleGetInfoString</key>
-	<string>v1.1</string>
+	<string>v2.0 final — HS04 mouse ext, HS05 receiver ext, HS06 AX210 BT internal (wired F_USB)</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.dhinakg.USBToolBox.map</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>2.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>2.0</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>EHC1</key>
@@ -38,7 +38,7 @@
 			<dict>
 				<key>port-count</key>
 				<data>
-				AQAAAA==
+				AgAAAA==
 				</data>
 				<key>ports</key>
 				<dict>
@@ -49,6 +49,15 @@
 						<key>port</key>
 						<data>
 						AQAAAA==
+						</data>
+					</dict>
+					<key>PRT2</key>
+					<dict>
+						<key>UsbConnector</key>
+						<integer>255</integer>
+						<key>port</key>
+						<data>
+						AgAAAA==
 						</data>
 					</dict>
 				</dict>
@@ -70,7 +79,7 @@
 			<dict>
 				<key>port-count</key>
 				<data>
-				AQAAAA==
+				AgAAAA==
 				</data>
 				<key>ports</key>
 				<dict>
@@ -81,6 +90,15 @@
 						<key>port</key>
 						<data>
 						AQAAAA==
+						</data>
+					</dict>
+					<key>PRT2</key>
+					<dict>
+						<key>UsbConnector</key>
+						<integer>255</integer>
+						<key>port</key>
+						<data>
+						AgAAAA==
 						</data>
 					</dict>
 				</dict>
@@ -102,7 +120,7 @@
 			<dict>
 				<key>port-count</key>
 				<data>
-				FAAAAA==
+				DwAAAA==
 				</data>
 				<key>ports</key>
 				<dict>
@@ -112,7 +130,7 @@
 						<integer>3</integer>
 						<key>port</key>
 						<data>
-						AgAAAA==
+						AQAAAA==
 						</data>
 					</dict>
 					<key>HS02</key>
@@ -121,43 +139,43 @@
 						<integer>3</integer>
 						<key>port</key>
 						<data>
-						AwAAAA==
+						AgAAAA==
 						</data>
 					</dict>
 					<key>HS03</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>255</integer>
+						<integer>3</integer>
 						<key>port</key>
 						<data>
-						BQAAAA==
+						AwAAAA==
 						</data>
 					</dict>
 					<key>HS04</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>0</integer>
+						<integer>3</integer>
 						<key>port</key>
 						<data>
-						BgAAAA==
+						BAAAAA==
 						</data>
 					</dict>
 					<key>HS05</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>3</integer>
+						<integer>0</integer>
 						<key>port</key>
 						<data>
-						BwAAAA==
+						BQAAAA==
 						</data>
 					</dict>
 					<key>HS06</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>0</integer>
+						<integer>255</integer>
 						<key>port</key>
 						<data>
-						CQAAAA==
+						BgAAAA==
 						</data>
 					</dict>
 					<key>HS07</key>
@@ -166,16 +184,25 @@
 						<integer>3</integer>
 						<key>port</key>
 						<data>
-						DAAAAA==
+						BwAAAA==
 						</data>
 					</dict>
 					<key>HS08</key>
 					<dict>
 						<key>UsbConnector</key>
+						<integer>3</integer>
+						<key>port</key>
+						<data>
+						CAAAAA==
+						</data>
+					</dict>
+					<key>HS09</key>
+					<dict>
+						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>
 						<data>
-						DQAAAA==
+						CQAAAA==
 						</data>
 					</dict>
 					<key>SS01</key>
@@ -184,7 +211,7 @@
 						<integer>3</integer>
 						<key>port</key>
 						<data>
-						EQAAAA==
+						CgAAAA==
 						</data>
 					</dict>
 					<key>SS02</key>
@@ -193,7 +220,7 @@
 						<integer>3</integer>
 						<key>port</key>
 						<data>
-						EgAAAA==
+						CwAAAA==
 						</data>
 					</dict>
 					<key>SS03</key>
@@ -202,7 +229,7 @@
 						<integer>3</integer>
 						<key>port</key>
 						<data>
-						EwAAAA==
+						DAAAAA==
 						</data>
 					</dict>
 					<key>SS04</key>
@@ -211,7 +238,25 @@
 						<integer>3</integer>
 						<key>port</key>
 						<data>
-						FAAAAA==
+						DQAAAA==
+						</data>
+					</dict>
+					<key>SS05</key>
+					<dict>
+						<key>UsbConnector</key>
+						<integer>3</integer>
+						<key>port</key>
+						<data>
+						DgAAAA==
+						</data>
+					</dict>
+					<key>SS06</key>
+					<dict>
+						<key>UsbConnector</key>
+						<integer>3</integer>
+						<key>port</key>
+						<data>
+						DwAAAA==
 						</data>
 					</dict>
 				</dict>
