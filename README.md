@@ -13,6 +13,7 @@ OpenCore EFI for a **X99 / Xeon E5-2686 v4 + AMD Radeon RX 6700 XT** Hackintosh 
 | Date | Change |
 | --- | --- |
 | 2026-11-10 | Switched Wi-Fi/BT to **Intel AX210**: added `AirportItlwm` (Tahoe build), `IntelBluetoothFirmware` + `IntelBTPatcher` (lshbluesky fork), removed Realtek Bluetooth firmware. Updated `config.plist` (added `-btlfxallowanyaddr` boot-arg) and refreshed `UTBMap.kext` USB port map. |
+| 2026-11-13 | Added `shda-lang=id` boot-arg (SimpleHDA audio language). |
 
 ---
 
@@ -35,7 +36,7 @@ OpenCore EFI for a **X99 / Xeon E5-2686 v4 + AMD Radeon RX 6700 XT** Hackintosh 
 | --- | --- |
 | OpenCore | `DBG-109-2026-10-31` (debug build) |
 | macOS | Tahoe (26) — `boot.efi 583~6005` |
-| boot-args | `debug=0x100 keepsyms=1 npci=0x2000 -btlfxallowanyaddr` |
+| boot-args | `debug=0x100 keepsyms=1 npci=0x2000 -btlfxallowanyaddr shda-lang=id` |
 | SIP | Enabled (`csr-active-config = 0`) |
 | Secure Boot | `SecureBootModel: Disabled` |
 | NVRAM | Emulated (`OpenVariableRuntimeDxe` — X99 legacy NVRAM) |

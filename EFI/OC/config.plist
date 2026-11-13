@@ -722,7 +722,7 @@
 				AAAAAAAAAAAAAAAAAAA=
 				</data>
 				<key>boot-args</key>
-				<string>debug=0x100 keepsyms=1 npci=0x2000 -btlfxallowanyaddr</string>
+				<string>debug=0x100 keepsyms=1 npci=0x2000 -btlfxallowanyaddr shda-lang=id</string>
 				<key>csr-active-config</key>
 				<data>
 				AAAAAA==
